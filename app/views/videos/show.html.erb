@@ -1,0 +1,24 @@
+<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info">
+			<h1>
+				<%= @video.name %>
+			</h1>
+			<%= video_tag @video.attachment, :size => "320x240", :controls => true %>
+		</section>
+		<h2>Comments : </h2>
+		bagus
+		<hr>
+		<div class="alert alert-info">
+			<%= form_for(@video, url: signup_path) do |f| %>
+
+			<%= f.label :comment %>
+			<textarea class="form-control" name="comment"></textarea>
+
+
+
+			<%= f.submit "Submit", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</aside>
+</div>
