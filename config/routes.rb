@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'comments/index'
+
+  get 'comments/new'
+
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   get 'videos/new'
   
   get 'videos/create'
@@ -25,9 +33,11 @@ Rails.application.routes.draw do
   get '/videos', to: 'videos#index'
   post '/videos', to: 'videos#create'
   delete '/videos', to: 'videos#destroy'
+  post '/comment', to: 'comments#create'
 
   resources :users
   resources :videos
+  resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

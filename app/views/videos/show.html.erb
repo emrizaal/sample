@@ -7,13 +7,19 @@
 			<%= video_tag @video.attachment, :size => "320x240", :controls => true %>
 		</section>
 		<h2>Comments : </h2>
-		bagus
-		<hr>
+		<% @comments.each do |c| %>
+
+		<%= c.content%>
+		<hr> 
+
+		<% end %>
+		
 		<div class="alert alert-info">
-			<%= form_for(@video, url: signup_path) do |f| %>
+			<%= form_for(@comment, url: comment_path) do |f| %>
 
 			<%= f.label :comment %>
-			<textarea class="form-control" name="comment"></textarea>
+			<textarea class="form-control" name="content"></textarea>
+			<input type="hidden" name="video_id" value="<%= @video.id %>">
 
 
 
